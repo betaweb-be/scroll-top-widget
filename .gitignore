@@ -1,0 +1,5 @@
+### Git ###
+*.orig
+
+### Jetbrains IDE ###
+.idea/
