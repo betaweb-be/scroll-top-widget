@@ -146,7 +146,7 @@ namespace Betaweb.Util {
                     clearInterval(scrollInterval);
                 }
             }, 10);
-        }
+        };
 
         /**
          * Get the number of pixels we've already scrolled
