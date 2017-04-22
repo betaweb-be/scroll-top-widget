@@ -101,9 +101,16 @@ namespace Betaweb.Util {
 
             // set the properties
             this.scrollElement.id = this.elementId;
-            this.scrollElement.innerText = this.scrollText;
+            this.scrollElement.title = this.scrollText;
+            this.scrollElement.className = 'scroll-up';
             this.scrollElement.href = '#';
             this.scrollElement.role = 'button';
+
+            // add the content in a span
+            let span = document.createElement('span');
+            span.className ='scroll-up__text';
+            span.innerText = this.scrollText;
+            this.scrollElement.appendChild(span);
 
             // check if we need to show or hide the element
             this.scrollElement.style.display = this.getScrollOffset() < this.scrollOffset ? 'none' : '';

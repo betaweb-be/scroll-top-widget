@@ -68,9 +68,15 @@ var Betaweb;
                     _this.scrollElement = document.createElement('a');
                     // set the properties
                     _this.scrollElement.id = _this.elementId;
-                    _this.scrollElement.innerText = _this.scrollText;
+                    _this.scrollElement.title = _this.scrollText;
+                    _this.scrollElement.className = 'scroll-up';
                     _this.scrollElement.href = '#';
                     _this.scrollElement.role = 'button';
+                    // add the content in a span
+                    var span = document.createElement('span');
+                    span.className = 'scroll-up__text';
+                    span.innerText = _this.scrollText;
+                    _this.scrollElement.appendChild(span);
                     // check if we need to show or hide the element
                     _this.scrollElement.style.display = _this.getScrollOffset() < _this.scrollOffset ? 'none' : '';
                     // add the element to the DOM
