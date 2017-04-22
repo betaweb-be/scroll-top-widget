@@ -49,6 +49,17 @@ var Betaweb;
                  */
                 this.container = 'body';
                 /**
+                 * Reload the "scroll to top" widget with the current config
+                 */
+                this.reload = function () {
+                    // remove the scroll element if it was already rendered
+                    if (_this.scrollElement) {
+                        _this.scrollElement.parentNode.removeChild(_this.scrollElement);
+                    }
+                    // let's get us started
+                    _this.createElement();
+                };
+                /**
                  * Set the config items for the scroll container
                  *
                  * @param config
@@ -84,6 +95,12 @@ var Betaweb;
                     if (container) {
                         container.appendChild(_this.scrollElement);
                     }
+                    // scroll to the top when the element is clicked on
+                    var self = _this;
+                    _this.scrollElement.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        self.scrollToTop();
+                    });
                 };
                 /**
                  * Initialize the event listeners
@@ -92,11 +109,6 @@ var Betaweb;
                     var self = _this;
                     // Listen for the scroll event and show/hide the element accordingly
                     window.addEventListener('scroll', function () { return (_this.scrollElement.style.display = _this.getScrollOffset() < _this.scrollOffset ? 'none' : ''); });
-                    // scroll to the top when the element is clicked on
-                    _this.scrollElement.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        self.scrollToTop();
-                    });
                 };
                 /**
                  * Scroll to the top of the page

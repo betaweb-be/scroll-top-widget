@@ -80,6 +80,19 @@ namespace Betaweb.Util {
         };
 
         /**
+         * Reload the "scroll to top" widget with the current config
+         */
+        public reload = () => {
+            // remove the scroll element if it was already rendered
+            if (this.scrollElement) {
+                this.scrollElement.parentNode.removeChild(this.scrollElement);
+            }
+
+            // let's get us started
+            this.createElement();
+        };
+
+        /**
          * Set the config items for the scroll container
          *
          * @param config
@@ -120,6 +133,13 @@ namespace Betaweb.Util {
             if (container) {
                 container.appendChild(this.scrollElement);
             }
+
+            // scroll to the top when the element is clicked on
+            const self = this;
+            this.scrollElement.addEventListener('click', (e) => {
+                e.preventDefault();
+                self.scrollToTop();
+            });
         };
 
         /**
@@ -130,12 +150,6 @@ namespace Betaweb.Util {
 
             // Listen for the scroll event and show/hide the element accordingly
             window.addEventListener('scroll', () => (this.scrollElement.style.display = this.getScrollOffset() < this.scrollOffset ? 'none' : ''));
-
-            // scroll to the top when the element is clicked on
-            this.scrollElement.addEventListener('click', (e) => {
-                e.preventDefault();
-                self.scrollToTop();
-            });
         };
 
         /**
