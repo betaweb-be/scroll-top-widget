@@ -49,6 +49,11 @@ var Betaweb;
                  */
                 this.container = 'body';
                 /**
+                 * Use HTML for the scrollText instead of plain text
+                 * @type {boolean}
+                 */
+                this.useHtml = false;
+                /**
                  * Reload the "scroll to top" widget with the current config
                  */
                 this.reload = function () {
@@ -83,11 +88,18 @@ var Betaweb;
                     _this.scrollElement.className = 'scroll-up';
                     _this.scrollElement.href = '#';
                     _this.scrollElement.role = 'button';
-                    // add the content in a span
-                    var span = document.createElement('span');
-                    span.className = 'scroll-up__text';
-                    span.innerText = _this.scrollText;
-                    _this.scrollElement.appendChild(span);
+                    // Set the content
+                    if (_this.useHtml !== true) {
+                        // add the content in a span
+                        var span = document.createElement('span');
+                        span.className = 'scroll-up__text';
+                        span.innerText = _this.scrollText;
+                        _this.scrollElement.appendChild(span);
+                    }
+                    else {
+                        // just set the html
+                        _this.scrollElement.innerHTML = _this.scrollText;
+                    }
                     // check if we need to show or hide the element
                     _this.scrollElement.style.display = _this.getScrollOffset() < _this.scrollOffset ? 'none' : '';
                     // add the element to the DOM

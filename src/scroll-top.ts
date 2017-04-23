@@ -16,6 +16,7 @@ namespace Betaweb.Util {
         scrollSpeed?:number;
         scrollText ?:string;
         container?:string;
+        useHtml?:boolean;
     }
 
     /**
@@ -62,6 +63,12 @@ namespace Betaweb.Util {
          * @type {string}
          */
         container:string = 'body';
+
+        /**
+         * Use HTML for the scrollText instead of plain text
+         * @type {boolean}
+         */
+        useHtml:boolean = false;
 
         /**
          * Class constructor
@@ -119,11 +126,17 @@ namespace Betaweb.Util {
             this.scrollElement.href = '#';
             this.scrollElement.role = 'button';
 
-            // add the content in a span
-            let span = document.createElement('span');
-            span.className ='scroll-up__text';
-            span.innerText = this.scrollText;
-            this.scrollElement.appendChild(span);
+            // Set the content
+            if (this.useHtml !== true) {
+                // add the content in a span
+                let span = document.createElement('span');
+                span.className ='scroll-up__text';
+                span.innerText = this.scrollText;
+                this.scrollElement.appendChild(span);
+            } else {
+                // just set the html
+                this.scrollElement.innerHTML = this.scrollText;
+            }
 
             // check if we need to show or hide the element
             this.scrollElement.style.display = this.getScrollOffset() < this.scrollOffset ? 'none' : '';
