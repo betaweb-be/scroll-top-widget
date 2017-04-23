@@ -28,10 +28,13 @@ default value: `scroll-up`
 default value: `300`
 - **scrollSpeed**: The speed (in milliseconds) it'll take to scroll all the way up  
 default value: `300`
-- **scrollText**: The text that will be placed in the element  
+- **scrollText**: The text that will be placed in the element (this can also be the html string if useHtml is set to true)  
 default value: `Scroll to top`
 - **container**: The selector for the container where the element will be appended to  
 default value: `body`
+- **useHtml**: use a custom html template instead of a plain text  
+default value: `false`
+
 
 You can set the options in the constructor or you can directly assign them to the object:
 
@@ -43,6 +46,7 @@ Betaweb.Util.ScrollTop({
     scrollSpeed: 300,
     scrollText: 'Scroll to top',
     container: 'body',
+    useHtml: false
 });
 
 // ...or directly assign them to the object
