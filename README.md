@@ -35,7 +35,7 @@ default value: `body`
 
 You can set the options in the constructor or you can directly assign them to the object:
 
-```html
+```javascript
 // init them in the constructor...
 Betaweb.Util.ScrollTop({
     elementId: 'scroll-up',
