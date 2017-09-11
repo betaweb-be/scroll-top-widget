@@ -18,15 +18,15 @@ gulp.task('compress', () => {
 });
 
 // apply post css actions on the css and move to the dist folder
-gulp.task('css', function () {
+gulp.task('css', () => {
     return gulp.src('./src/*.css')
         .pipe(postcss())
         .pipe(gulp.dest('dist'));
 });
 
 // minify the css that's in the dist folder
-gulp.task('minify-css',['css'], function () {
-    gulp.src('dist/scroll-top.css')
+gulp.task('minify-css',['css'], () => {
+    return gulp.src('dist/scroll-top.css')
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist'));
