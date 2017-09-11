@@ -6,7 +6,7 @@ const gulp = require('gulp'),
 
 // compress javascript files and move them to the dist folder
 gulp.task('compress', () => {
-    gulp.src('src/*.js')
+    return gulp.src('src/*.js')
         .pipe(minify({
             ext:{
                 src:'.js',
@@ -25,7 +25,7 @@ gulp.task('css', function () {
 });
 
 // minify the css that's in the dist folder
-gulp.task('minify-css', function () {
+gulp.task('minify-css',['css'], function () {
     gulp.src('dist/scroll-top.css')
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
@@ -33,4 +33,4 @@ gulp.task('minify-css', function () {
 });
 
 // go nuts
-gulp.task('default', ['compress', 'css', 'minify-css']);
+gulp.task('default', ['compress', 'minify-css']);
