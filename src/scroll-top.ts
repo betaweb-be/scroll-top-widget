@@ -187,7 +187,7 @@ namespace Betaweb.Util {
          * @returns {number}
          */
         private getScrollOffset = ():number => {
-            return document.querySelector('body').scrollTop;
+            return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
         };
     }
 }

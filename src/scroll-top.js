@@ -15,7 +15,7 @@ var Betaweb;
          * This class adds an element to the bottom right of a page that
          * will scroll the page to the top when clicked on
          */
-        var ScrollTop = (function () {
+        var ScrollTop = /** @class */ (function () {
             /**
              * Class constructor
              *
@@ -143,7 +143,7 @@ var Betaweb;
                  * @returns {number}
                  */
                 this.getScrollOffset = function () {
-                    return document.querySelector('body').scrollTop;
+                    return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
                 };
                 // check if we need to set a config
                 if (config) {
