@@ -1,0 +1,26 @@
+{
+  "name": "scroll-top-widget",
+  "version": "0.1.0",
+  "description": "Simple javascript utility that adds a \"scroll to top\" button to a website",
+  "main": "scroll-top.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betaweb-be/scroll-top-widget.git"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "widget",
+    "scroll",
+    "website"
+  ],
+  "author": "Jens Trio <hello@betaweb.be> (https://www.betaweb.be)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/betaweb-be/scroll-top-widget/issues"
+  },
+  "homepage": "https://github.com/betaweb-be/scroll-top-widget#readme",
+  "devDependencies": {
+    "typescript": "^2.5.0"
+  }
+}
