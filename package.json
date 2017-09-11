@@ -1,6 +1,6 @@
 {
   "name": "scroll-top-widget",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Simple javascript utility that adds a \"scroll to top\" button to a website",
   "main": "scroll-top.js",
   "repository": {
