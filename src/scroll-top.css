@@ -1,4 +1,5 @@
 .scroll-up {
+    font-family: arial, verdana, sans-serif;
     position: fixed;
     bottom: 1rem;
     right: 2rem;
@@ -19,7 +20,7 @@
     height: 3.75rem;
     background: #568eca;
     text-align: center;
-    line-height: 3.75rem;
+    line-height: 1.6;
 }
 
 .scroll-up__text {
