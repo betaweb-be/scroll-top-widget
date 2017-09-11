@@ -1,0 +1,1 @@
+.scroll-up,.scroll-up:before{width:3.75rem;height:3.75rem}.scroll-up{font-family:arial,verdana,sans-serif;position:fixed;bottom:1rem;right:2rem;display:inline-block;border-radius:50%;overflow:hidden}.scroll-up:before{content:"\25B2";display:block;color:#fff;position:absolute;font-size:2.2rem;background:#568eca;text-align:center;line-height:1.6}.scroll-up__text{display:none}
