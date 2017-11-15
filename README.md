@@ -1,7 +1,5 @@
 # Scroll top widget
 
-**Work in progress**
-
 A simple javascript library that adds a "scroll to top" widget to your website. Written in Typescript with zero dependencies and only 1.5 KB when minified.
 
 ## How to use
